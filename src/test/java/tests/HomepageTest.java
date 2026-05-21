@@ -10,4 +10,10 @@ public class HomepageTest extends BaseTest {
 
     private static final String URL = "https://premthatikonda.xyz";
 
+    @Test
+    void homepageTitleIsNotEmpty() {
+        driver.get(URL);
+        assertFalse(driver.getTitle().isEmpty(), "Page title should not be empty");
+    }
+
 }
