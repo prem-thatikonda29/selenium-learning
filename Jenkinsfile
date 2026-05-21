@@ -14,7 +14,7 @@ pipeline {
 
         stage('Run Selenium Tests') {
             steps {
-                sh 'mvn test -Dheadless=true'
+                sh '/opt/homebrew/bin/mvn test -Dheadless=true'
             }
         }
     }
