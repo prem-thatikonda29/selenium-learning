@@ -17,7 +17,7 @@ public class BaseTest {
         String bravePath = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser";
         if (new java.io.File(bravePath).exists()) {
             options.setBinary(bravePath);
-            WebDriverManager.chromedriver().browserPath(bravePath).setup();
+            WebDriverManager.chromedriver().browserVersion("148").setup();
         } else {
             WebDriverManager.chromedriver().setup();
         }
