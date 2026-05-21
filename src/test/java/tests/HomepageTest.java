@@ -9,6 +9,5 @@ import static org.junit.jupiter.api.Assertions.*;
 public class HomepageTest extends BaseTest {
 
     private static final String URL = "https://premthatikonda.xyz";
-    Y
 
 }
