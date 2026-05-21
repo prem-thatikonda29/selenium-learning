@@ -13,11 +13,13 @@ public class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         String bravePath = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser";
         if (new java.io.File(bravePath).exists()) {
             options.setBinary(bravePath);
+            WebDriverManager.chromedriver().browserPath(bravePath).setup();
+        } else {
+            WebDriverManager.chromedriver().setup();
         }
         if (Boolean.parseBoolean(System.getProperty("headless", "false"))) {
             options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
