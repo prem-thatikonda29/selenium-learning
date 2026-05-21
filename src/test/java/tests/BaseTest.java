@@ -15,7 +15,9 @@ public class BaseTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--headless"); // uncomment to run without browser window
+        if (Boolean.parseBoolean(System.getProperty("headless", "false"))) {
+            options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
+        }
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
